@@ -1,6 +1,6 @@
-FROM softinstigate/maven-aws:3.0.0
+FROM bitnami/aws-cli:2
 
-LABEL maintainer="SoftInstigate <info@softinstigate.com>"
+LABEL maintainer="Webvalley <info@webvalleyagency.com>"
 
 ARG RELEASE
 
@@ -15,7 +15,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils nodejs yarn groff rsync
 
 # Install serverless cli
-RUN yarn global add serverless@${RELEASE}
+RUN npm install -g serverless@${RELEASE}
 
 COPY bin/startup.sh .
 RUN "./startup.sh"
