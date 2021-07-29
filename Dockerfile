@@ -1,7 +1,7 @@
 FROM bitnami/aws-cli:2
-
 LABEL maintainer="Webvalley <info@webvalleyagency.com>"
 
+USER root
 ARG RELEASE
 
 # Install node.js and yarn
