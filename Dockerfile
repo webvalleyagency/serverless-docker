@@ -19,3 +19,5 @@ RUN npm install -g serverless@${RELEASE}
 
 COPY bin/startup.sh .
 RUN "./startup.sh"
+
+ENTRYPOINT [ "/bin/sh" ]
